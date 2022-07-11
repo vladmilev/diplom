@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/yandex-cloud/yandex": {
+    "hash": "h1:tbaxcM/JMsrFnkj/b8+hk4a1tTsryRluYn9IwACSNQc=",
+    "version": "0.76.0"
+  }
+}
