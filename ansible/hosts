@@ -1,0 +1,2 @@
+[nginx]
+milevsky.quest  letsencrypt_email=vlad_milev@mail.ru domain_name=milevsky.quest

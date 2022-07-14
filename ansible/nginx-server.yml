@@ -1,0 +1,5 @@
+- hosts: nginx
+  become: true
+  gather_facts: true
+  roles:
+   - Nginx_LetsEncrypt
