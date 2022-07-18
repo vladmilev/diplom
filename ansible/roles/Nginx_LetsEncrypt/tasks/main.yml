@@ -1,4 +1,7 @@
 ---
+- name: update
+  raw: apt-get update
+
 - name: python-simplejson
   raw: apt-get install -y python-simplejson
 

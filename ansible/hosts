@@ -1,2 +1,4 @@
 [nginx]
-milevsky.quest  letsencrypt_email=vlad_milev@mail.ru domain_name=milevsky.quest
+62.84.118.248  letsencrypt_email=vlad_milev@mail.ru domain_name=milevsky.quest 
+
+#ssh_args='-o UserKnownHostsyFile=/dev/null -o StrictHostKeyChecking=no'

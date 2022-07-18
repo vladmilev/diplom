@@ -9,7 +9,7 @@ resource "yandex_compute_instance" "nginx" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd8ic5bmgr51h6e7bh1v"
+      image_id = "fd82re2tpfl4chaupeuf" //Ubuntu 20.04 LTS
     }
   }
 
