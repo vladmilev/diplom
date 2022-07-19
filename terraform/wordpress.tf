@@ -1,6 +1,6 @@
-resource "yandex_compute_instance" "www" {
-  name     = "www"
-  hostname = "www.milevsky.quest"
+resource "yandex_compute_instance" "app" {
+  name     = "app"
+  hostname = "app.milevsky.quest"
 
   resources {
     cores  = 4
