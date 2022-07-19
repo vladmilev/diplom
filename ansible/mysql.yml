@@ -1,0 +1,8 @@
+- hosts: mysql
+  become: true
+  become_method: sudo
+  become_user: root
+  remote_user: ubuntu
+  gather_facts: true
+  roles:
+   - mysql
