@@ -4,8 +4,8 @@ milevsky.quest ansible_host=62.84.118.248 letsencrypt_email=vlad_milev@mail.ru d
 # 62.84.118.248
 
 [mysql]
-db01.milevsky.quest ansible_host=51.250.74.243 mysql_server_id=1 mysql_replication_role=master
-db02.milevsky.quest ansible_host=62.84.117.7 mysql_server_id=2 mysql_replication_role=slave
+db01.milevsky.quest ansible_host=51.250.78.82 mysql_server_id=1 mysql_replication_role=master
+db02.milevsky.quest ansible_host=51.250.80.124 mysql_server_id=2 mysql_replication_role=slave
 
 [wordpress]
-app.milevsky.quest ansible_host=51.250.83.11
+app.milevsky.quest ansible_host=51.250.73.32

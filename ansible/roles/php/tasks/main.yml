@@ -1,30 +1,24 @@
 ---
-# tasks file for php
+- name: Upgrade system
+  apt: update_cache=yes
 
-- name: Install php extensions
-  apt:
-    name: "{{ item }}"
-    state: present
-  become: yes
+- name: install php7.4
+  apt: pkg={{ item }}
   with_items:
     - php7.4
-    - php7.4-mysql
-    - php7.4-gd
-    - php-ssh2
-#    - php-mcrypt
     - php7.4-cgi
     - php-fpm
+    - php7.4-memcache
+    - php7.4-memcached
+#    - php-mcrypt
+    - php7.4-mysql
+    - php7.4-gd
     - php7.4-curl
     - php7.4-xmlrpc
 
-- name: Setup php-fpm
-  replace: dest=/etc/php/7.4/fpm/php.ini regexp="(;cgi.fix_pathinfo=1)" replace="cgi.fix_pathinfo=0"
-  notify:
-    - restart nginx
-  become: yes
-
-- name: Add php settings
-  template: src=../../nginx/templates/nginx-wp-common.conf dest=/etc/nginx/nginx-wp-common.conf owner=www-data group=www-data mode=0644
-  notify:
-    - restart nginx
-  become: yes
+- name: change listen socket
+  lineinfile:
+    dest: '/etc/php/7.4/fpm/pool.d/www.conf'
+    insertafter: 'listen = 127.0.0.1:9000'
+    line: 'listen = /var/run/php7.4-fpm.sock'
+  notify: restart php-fpm
