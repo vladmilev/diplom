@@ -14,3 +14,17 @@ server {
     }
 }
 
+server {
+    listen 80;
+    server_name gitlab.milevsky.quest;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://gitlab.milevsky.quest$request_uri? permanent;
+    }
+}
+

@@ -10,6 +10,7 @@ resource "yandex_compute_instance" "gitlab" {
   boot_disk {
     initialize_params {
       image_id = "fd82re2tpfl4chaupeuf" //Ubuntu 20.04 LTS
+      size = 12
     }
   }
 
