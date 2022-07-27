@@ -1,17 +1,19 @@
 [nginx]
 milevsky.quest ansible_host=62.84.118.248 letsencrypt_email=vlad_milev@mail.ru domain_name=milevsky.quest 
-#ssh_args='-o UserKnownHostsyFile=/dev/null -o StrictHostKeyChecking=no'
-# 62.84.118.248
 
 [mysql]
-db01.milevsky.quest ansible_host=62.84.113.196 mysql_server_id=1 mysql_replication_role=master
-db02.milevsky.quest ansible_host=51.250.66.142 mysql_server_id=2 mysql_replication_role=slave
+db01.milevsky.quest ansible_host=51.250.4.226 mysql_server_id=1 mysql_replication_role=master
+db02.milevsky.quest ansible_host=51.250.92.124 mysql_server_id=2 mysql_replication_role=slave
 
 [wordpress]
-app.milevsky.quest ansible_host=51.250.14.58
+app.milevsky.quest ansible_host=51.250.84.247
 
 [gitlab]
-gitlab.milevsky.quest ansible_host=62.84.115.142
+gitlab.milevsky.quest ansible_host=51.250.95.44
 
 [runner]
-runner.milevsky.quest ansible_host=62.84.113.172
+runner.milevsky.quest ansible_host=51.250.86.8
+
+[monitoring]
+monitoring.milevsky.quest ansible_host=51.250.95.84
+

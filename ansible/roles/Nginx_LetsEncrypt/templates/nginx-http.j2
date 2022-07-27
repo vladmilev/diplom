@@ -28,3 +28,44 @@ server {
     }
 }
 
+server {
+    listen 80;
+    server_name grafana.milevsky.quest;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://grafana.milevsky.quest$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name prometheus.milevsky.quest;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://prometheus.milevsky.quest$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name alertmanager.milevsky.quest;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://alertmanager.milevsky.quest$request_uri? permanent;
+    }
+}
