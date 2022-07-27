@@ -22,7 +22,7 @@ gitlab_runner_concurrent: '{{ ansible_processor_vcpus }}'
 # GitLab coordinator URL
 gitlab_runner_coordinator_url: 'http://gitlab.milevsky.quest'
 # GitLab registration token
-gitlab_runner_registration_token: 'GR1348941htP-NLp75qSuST-14Zxn'
+gitlab_runner_registration_token: 'GR1348941SqYDQRzAS_Dtxk-WB8Rw'
 
 gitlab_runner_sentry_dsn: ''
 

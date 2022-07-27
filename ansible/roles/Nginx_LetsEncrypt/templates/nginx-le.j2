@@ -142,11 +142,11 @@ server {
 }
 server {
     listen 443 ssl;
-    server_name prometheus.zhukops.ru;
+    server_name prometheus.milevsky.quest;
 
-    ssl_certificate         /etc/letsencrypt/live/prometheus.zhukops.ru/fullchain.pem;
-    ssl_certificate_key     /etc/letsencrypt/live/prometheus.zhukops.ru/privkey.pem;
-    ssl_trusted_certificate /etc/letsencrypt/live/prometheus.zhukops.ru/fullchain.pem;
+    ssl_certificate         /etc/letsencrypt/live/prometheus.milevsky.quest/fullchain.pem;
+    ssl_certificate_key     /etc/letsencrypt/live/prometheus.milevsky.quest/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/prometheus.milevsky.quest/fullchain.pem;
 
     ssl_session_cache shared:SSL:50m;
     ssl_session_timeout 5m;

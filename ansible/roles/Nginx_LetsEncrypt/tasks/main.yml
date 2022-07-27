@@ -48,6 +48,21 @@
   args:
     creates: /etc/letsencrypt/live/gitlab.milevsky.quest
   
+- name: Create letsencrypt certificate grafana
+  shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d grafana.milevsky.quest
+  args:
+    creates: /etc/letsencrypt/live/grafana.milevsky.quest
+
+- name: Create letsencrypt certificate prometheus
+  shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d prometheus.milevsky.quest
+  args:
+    creates: /etc/letsencrypt/live/prometheus.milevsky.quest
+
+- name: Create letsencrypt certificate alertmanager
+  shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d alertmanager.milevsky.quest
+  args:
+    creates: /etc/letsencrypt/live/alertmanager.milevsky.quest
+
 - name: Generate dhparams
   shell: openssl dhparam -out /etc/nginx/dhparams.pem 2048
   args:
